@@ -7,8 +7,14 @@ A nextJS based web front-end which records audio conversations between a doctor 
 4) Extract and show all the information related to that conversation on the web UI
 
 
-# docker-compose up --build
+# Running the local setup
 
+Latest version of docker to be installed
+
+Run this command in the root directory where docker-compose.yml file is present:
+```
+docker-compose up --build
+```
 This will build and start all the containers. You should be able to access:
 
 Frontend: http://localhost:3000
