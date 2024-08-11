@@ -1,3 +1,5 @@
+# Project introduction
+
 A nextJS based web front-end which records audio conversations between a doctor and a patient. Django as back-end and MongoDB for database.
 1) Store the audio files 
 2) Analyzes the files and extract the information
