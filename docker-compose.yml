@@ -27,7 +27,7 @@ services:
 
   mongodb:
     image: mongo:4.4
-    container_name: mongodb-medai
+    # container_name: mongodb-medai
     ports:
       - "27017:27017"
     volumes:
@@ -37,7 +37,7 @@ services:
 
   mongo-express:
     image: mongo-express
-    container_name: mongo-express-medai
+    # container_name: mongo-express-medai
     ports:
       - "8082:8081"
     environment:
