@@ -11,6 +11,7 @@ interface SavedAudio {
   id: string;
   filename: string;
   audio_url: string;
+  extracted_text: string;
 }
 
 const Home: React.FC = () => {
@@ -135,6 +136,10 @@ const Home: React.FC = () => {
                 <li key={audio.id} className="home__saved-audio-item">
                   <span>{audio.filename}</span>
                   <audio src={audio.audio_url} controls />
+                  <div className="home__extracted-text">
+                    <h4>Extracted Text:</h4>
+                    <p>{audio.extracted_text}</p>
+                  </div>
                 </li>
               ))}
             </ul>

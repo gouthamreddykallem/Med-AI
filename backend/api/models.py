@@ -6,6 +6,7 @@ class Audio(models.Model):
     _id = ObjectIdField()
     filename = models.CharField(max_length=255)
     file_path = models.CharField(max_length=255)
+    extracted_text = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
