@@ -63,6 +63,7 @@ const Home: React.FC = () => {
   const toggleRecording = () => {
     if (recorderState.isRecording) {
       stopRecording();
+      saveAudio();
     } else {
       startRecording();
     }
@@ -119,12 +120,12 @@ const Home: React.FC = () => {
         <button className="home__button" onClick={toggleRecording}>
           {recorderState.isRecording ? 'Stop Recording' : 'Start Recording'}
         </button>
-        {recorderState.audioUrl && (
+        {/* {recorderState.audioUrl && (
           <div className="home__audio-player">
             <audio src={recorderState.audioUrl} controls />
             <button className="home__button" onClick={saveAudio}>Save Recording</button>
           </div>
-        )}
+        )} */}
         <div className="home__saved-audios">
           <h3>Saved Recordings</h3>
           {savedAudios.length === 0 ? (
