@@ -4,6 +4,7 @@ import './Home.scss';
 import { AudioRecorderState } from '@/app/types/audio';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
+import Link from 'next/link';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
@@ -88,7 +89,7 @@ const Home: React.FC = () => {
     }
   };
 
-  
+
   const fetchSavedAudios = async () => {
     try {
       console.log('Fetching from:', `${API_URL}/api/audio/`);
@@ -133,10 +134,14 @@ const Home: React.FC = () => {
           ) : (
             <ul>
               {savedAudios.map((audio) => (
-                <li key={audio.id} className="home__saved-audio-item">
-                  <span>{audio.filename}</span>
-                  <audio src={audio.audio_url} controls />
-                </li>
+                // <Link key={audio.id} href={`/record/${audio.id}`}>
+                <Link key={audio.id} href="/record">
+                  <li className="home__saved-audio-item">
+                    <span>{audio.filename}</span>
+                    <audio src={audio.audio_url} controls />
+                  </li>
+                </Link>
+
               ))}
             </ul>
           )}
@@ -144,7 +149,7 @@ const Home: React.FC = () => {
       </main>
       <Footer />
     </div>
-  );
+  );  
 }
 
 export default Home;
