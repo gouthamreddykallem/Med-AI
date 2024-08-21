@@ -112,7 +112,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="home">
-      <Header />
+      {/* <Header /> */}
       <main className="home__main">
         <h2 className="home__title">Welcome to Medical AI Assistant</h2>
         <p className="home__description">
@@ -134,10 +134,10 @@ const Home: React.FC = () => {
           ) : (
             <ul>
               {savedAudios.map((audio) => (
-                // <Link key={audio.id} href={`/record/${audio.id}`}>
-                <Link key={audio.id} href="/record">
+                // <Link key={audio.id} href='/record/${audio.id}'>
+                <Link key={audio.id} href={`/record/${audio.id}`}>
                   <li className="home__saved-audio-item">
-                    <span>{audio.filename}</span>
+                    <span>{audio.id}</span>
                     <audio src={audio.audio_url} controls />
                   </li>
                 </Link>
@@ -147,7 +147,7 @@ const Home: React.FC = () => {
           )}
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );  
 }
