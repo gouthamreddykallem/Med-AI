@@ -7,6 +7,8 @@ from django.conf import settings
 import os
 from .models import Audio
 from .serializers import AudioSerializer
+from django.shortcuts import get_object_or_404
+from bson import ObjectId
 
 class HealthCheckView(APIView):
     def get(self, request):
@@ -37,4 +39,9 @@ class AudioView(APIView):
     def get(self, request, *args, **kwargs):
         audios = Audio.objects.all()
         serializer = AudioSerializer(audios, many=True, context={'request': request})
+        return Response(serializer.data)
+class AudioDetailView(APIView):
+    def get(self, request, id):
+        audio = get_object_or_404(Audio, _id=ObjectId(id))
+        serializer = AudioSerializer(audio, many=False, context={'request': request})
         return Response(serializer.data)
