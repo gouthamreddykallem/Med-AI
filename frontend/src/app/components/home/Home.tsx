@@ -3,6 +3,8 @@ import './Home.scss';
 import { AudioRecorderState, SavedAudio } from '@/app/types/audio';
 import Link from 'next/link';
 import apiService from '@/app/services/apiService';
+import { useRouter } from 'next/navigation';
+import { useAudio } from '@/app/contexts/AudioContext';
 
 const Home: React.FC = () => {
   const [recorderState, setRecorderState] = useState<AudioRecorderState>({
@@ -14,6 +16,8 @@ const Home: React.FC = () => {
   const [savedAudios, setSavedAudios] = useState<SavedAudio[]>([]);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
+  const router = useRouter();
+  const { setSelectedAudioId } = useAudio();
 
   const startRecording = async () => {
     try {
@@ -80,6 +84,11 @@ const Home: React.FC = () => {
     }
   };
 
+  const handleAudioSelect = (id: string) => {
+    setSelectedAudioId(id);
+    router.push('/record');
+  };
+
   useEffect(() => {
     fetchSavedAudios();
   }, []);
@@ -101,19 +110,19 @@ const Home: React.FC = () => {
           ) : (
             <ul>
               {savedAudios.map((audio) => (
-                <Link key={audio.id} href={`/record/${audio.id}`}>
-                  <li className="home__saved-audio-item">
-                    <span>{audio.id}</span>
-                    <audio src={audio.audio_url} controls />
-                  </li>
-                </Link>
+                <li key={audio.id} className="home__saved-audio-item">
+                  <button onClick={() => handleAudioSelect(audio.id)}>
+                    <span>{audio.filename}</span>
+                  </button>
+                  <audio src={audio.audio_url} controls />
+                </li>
               ))}
             </ul>
           )}
         </div>
       </main>
     </div>
-  );  
+  );
 }
 
 export default Home;
