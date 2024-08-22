@@ -2,12 +2,12 @@
 FROM python:3.9
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
-    ffmpeg \
-    libasound-dev \
-    portaudio19-dev \
-    python3-pyaudio \
-    && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y \
+#     ffmpeg \
+#     libasound-dev \
+#     portaudio19-dev \
+#     python3-pyaudio \
+#     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 COPY requirements.txt .
