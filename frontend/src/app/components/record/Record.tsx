@@ -43,7 +43,7 @@ const Record: React.FC = () => {
       <div className="details">
         <div className="history">
           <div className="chief_Complaint">
-            <strong><h2>Chief Complaint</h2></strong>
+            <strong><h2>Chief Complaint - {audioDetails.patient_name || 'Unknown Patient'}</h2></strong>
             <h2>Copy All</h2>
           </div>
           <h3>History</h3>

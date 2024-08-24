@@ -6,19 +6,6 @@ import apiService from '@/app/services/apiService';
 import { useRouter } from 'next/navigation';
 import { useAudio } from '@/app/contexts/AudioContext';
 
-
-interface LocalSavedAudio {
-  id: string;
-  audio_url: string;
-  created_at: string;
-  // other properties from the API response
-}
-
-interface SavedAudioType extends LocalSavedAudio {
-  patientName: string;
-}
-
-
 const Home: React.FC = () => {
   const [recorderState, setRecorderState] = useState<AudioRecorderState>({
     isRecording: false,
@@ -27,7 +14,7 @@ const Home: React.FC = () => {
   });
 
   const [patientName, setPatientName] = useState<string>('');
-  const [savedAudios, setSavedAudios] = useState<SavedAudioType[]>([]);
+  const [savedAudios, setSavedAudios] = useState<SavedAudio[]>([]);
   const [error, setError] = useState<string | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
@@ -89,7 +76,7 @@ const Home: React.FC = () => {
   const saveAudio = async (audioBlob: Blob) => {
     if (audioBlob) {
       try {
-        await apiService.saveAudio(audioBlob);
+        await apiService.saveAudio(audioBlob, patientName);
         fetchSavedAudios();
       } catch (error) {
         console.error('Error saving audio:', error);
@@ -168,7 +155,7 @@ const Home: React.FC = () => {
               <tbody>
                 {savedAudios.map((audio) => (
                   <tr key={audio.id}>
-                    <td>{audio.patientName || 'N/A'}</td>
+                    <td>{audio.patient_name || 'N/A'}</td>
                     <td>{new Date(audio.created_at).toLocaleString()}</td>
                     <td>
                       <audio src={audio.audio_url} controls />

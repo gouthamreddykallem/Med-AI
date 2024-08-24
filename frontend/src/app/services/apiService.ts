@@ -10,9 +10,10 @@ const generateUniqueFileName = (extension: string = 'wav'): string => {
 };
 
 const apiService = {
-    saveAudio: async (audioBlob: Blob): Promise<SavedAudio> => {
+    saveAudio: async (audioBlob: Blob, patientName: string): Promise<SavedAudio> => {
         const formData = new FormData();
         const fileName = generateUniqueFileName();
+        formData.append('patient_name', patientName);
         formData.append('audio', audioBlob, fileName);
 
         try {

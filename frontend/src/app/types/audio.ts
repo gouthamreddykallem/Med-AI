@@ -13,4 +13,5 @@ export interface SavedAudio {
   audio_url: string;
   extracted_text?: string;
   created_at: string;
+  patient_name:string;
 }

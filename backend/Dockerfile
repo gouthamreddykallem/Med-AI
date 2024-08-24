@@ -9,6 +9,8 @@ FROM python:3.9
 #     python3-pyaudio \
 #     && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y ffmpeg
+
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
