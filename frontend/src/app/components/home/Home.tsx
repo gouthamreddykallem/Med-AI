@@ -6,6 +6,19 @@ import apiService from '@/app/services/apiService';
 import { useRouter } from 'next/navigation';
 import { useAudio } from '@/app/contexts/AudioContext';
 
+
+interface LocalSavedAudio {
+  id: string;
+  audio_url: string;
+  created_at: string;
+  // other properties from the API response
+}
+
+interface SavedAudioType extends LocalSavedAudio {
+  patientName: string;
+}
+
+
 const Home: React.FC = () => {
   const [recorderState, setRecorderState] = useState<AudioRecorderState>({
     isRecording: false,
@@ -13,13 +26,21 @@ const Home: React.FC = () => {
     audioUrl: null,
   });
 
-  const [savedAudios, setSavedAudios] = useState<SavedAudio[]>([]);
+  const [patientName, setPatientName] = useState<string>('');
+  const [savedAudios, setSavedAudios] = useState<SavedAudioType[]>([]);
+  const [error, setError] = useState<string | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
   const router = useRouter();
   const { setSelectedAudioId } = useAudio();
 
   const startRecording = async () => {
+    if (!patientName.trim()) {
+      setError('Please enter a patient name before starting the recording.');
+      return;
+    }
+
+    setError(null); // Clear any existing error message
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       mediaRecorderRef.current = new MediaRecorder(stream);
@@ -42,10 +63,11 @@ const Home: React.FC = () => {
         chunksRef.current = [];
       };
 
-      mediaRecorderRef.current.start(100); // Start recording and fire ondataavailable every 100ms
+      mediaRecorderRef.current.start(100);
       setRecorderState((prevState) => ({ ...prevState, isRecording: true }));
     } catch (error) {
       console.error('Error accessing microphone:', error);
+      setError('Failed to access microphone. Please check your permissions.');
     }
   };
 
@@ -71,6 +93,7 @@ const Home: React.FC = () => {
         fetchSavedAudios();
       } catch (error) {
         console.error('Error saving audio:', error);
+        setError('Failed to save audio. Please try again.');
       }
     }
   };
@@ -78,11 +101,19 @@ const Home: React.FC = () => {
   const fetchSavedAudios = async () => {
     try {
       const audios = await apiService.fetchSavedAudios();
-      setSavedAudios(audios);
+  
+      // Map the fetched audios to include the patientName property
+      const mappedAudios = audios.map((audio) => ({
+        ...audio,
+        patientName: 'N/A',  // Provide a default or placeholder value
+      }));
+  
+      setSavedAudios(mappedAudios);
     } catch (error) {
       console.error('Error fetching saved audios:', error);
+      setError('Failed to fetch saved recordings. Please try again.');
     }
-  };
+  };;
 
   const handleAudioSelect = (id: string) => {
     setSelectedAudioId(id);
@@ -100,24 +131,57 @@ const Home: React.FC = () => {
         <p className="home__description">
           This application helps record and analyze conversations between doctors and patients.
         </p>
-        <button className="home__button" onClick={toggleRecording}>
-          {recorderState.isRecording ? 'Stop Recording' : 'Start Recording'}
-        </button>
+        <div className="home__patient-name">
+          <label>
+            Patient Name:
+            <input
+              type="text"
+              value={patientName}
+              onChange={(e) => setPatientName(e.target.value)}
+              placeholder="Enter patient name"
+            />
+          </label>
+        </div>
+        <div className="home__recorder">
+          <button 
+            className={`home__record-button ${recorderState.isRecording ? 'recording' : ''}`}
+            onClick={toggleRecording}
+          >
+            <span>{recorderState.isRecording ? 'Stop Recording' : 'Start Recording'}</span>
+          </button>
+        </div>
+        {error && <p className="home__error">{error}</p>}
         <div className="home__saved-audios">
           <h3>Saved Recordings</h3>
           {savedAudios.length === 0 ? (
             <p>No saved recordings yet.</p>
           ) : (
-            <ul>
-              {savedAudios.map((audio) => (
-                <li key={audio.id} className="home__saved-audio-item">
-                  <button onClick={() => handleAudioSelect(audio.id)}>
-                    <span>{audio.filename}</span>
-                  </button>
-                  <audio src={audio.audio_url} controls />
-                </li>
-              ))}
-            </ul>
+            <table className="home__recordings-table">
+              <thead>
+                <tr>
+                  <th>Patient Name</th>
+                  <th>Created Date</th>
+                  <th>Recording</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {savedAudios.map((audio) => (
+                  <tr key={audio.id}>
+                    <td>{audio.patientName || 'N/A'}</td>
+                    <td>{new Date(audio.created_at).toLocaleString()}</td>
+                    <td>
+                      <audio src={audio.audio_url} controls />
+                    </td>
+                    <td>
+                      <button onClick={() => handleAudioSelect(audio.id)}>
+                        Select
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           )}
         </div>
       </main>
