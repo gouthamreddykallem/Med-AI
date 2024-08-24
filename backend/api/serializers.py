@@ -9,7 +9,7 @@ class AudioSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Audio
-        fields = ['id', 'filename', 'file_path', 'extracted_text', 'created_at', 'audio_url']
+        fields = ['id', 'filename', 'file_path', 'extracted_text', 'created_at', 'audio_url', 'patient_name']
 
     def get_audio_url(self, obj):
         request = self.context.get('request')

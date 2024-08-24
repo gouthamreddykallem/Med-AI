@@ -79,4 +79,72 @@
       width: 200px;
     }
   }
+
+  &__patient-name {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 5px;
+      color: #333; // Add this line to set the text color
+    }
+  }
+}
+
+.home__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Center the content horizontally
+  justify-content: center; // Center the content vertically
+  padding: 20px;
+}
+
+.home__patient-name {
+  margin-bottom: 20px; // Adds space between the input and button
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Centers the label and input
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 5px; // Adds space between label and input
+}
+
+.home__recorder {
+  margin-top: 20px; // Adds space between the button and input
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__record-button {
+  padding: 12px 24px;
+  background-color: #007bff; // Lighter blue
+  border: none;
+  border-radius: 5px; // Rectangular shape
+  color: #fff; // White text
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #0056b3; // Darker blue on hover
+  }
+
+  svg {
+    margin-right: 8px; // Space between icon and text
+  }
 }
