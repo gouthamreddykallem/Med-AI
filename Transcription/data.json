@@ -1,0 +1,77 @@
+{
+  "text": " Hi Shiva, what are your plans for the day? I am going to complete my assignments and that is for today. Okay sounds good. What kind of assignment are you working on? I am going to have two assignments from one front to my computer graphics and other from my architecture. That's the only two of those.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.0,
+      "text": " Hi Shiva, what are your plans for the day?",
+      "tokens": [
+        50364, 2421, 34729, 11, 437, 366, 428, 5482, 337, 264, 786, 30, 50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.36725387573242185,
+      "compression_ratio": 1.3095238095238095,
+      "no_speech_prob": 0.1598321795463562
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.0,
+      "end": 9.0,
+      "text": " I am going to complete my assignments and that is for today.",
+      "tokens": [
+        50514, 286, 669, 516, 281, 3566, 452, 22546, 293, 300, 307, 337, 965,
+        13, 50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.36725387573242185,
+      "compression_ratio": 1.3095238095238095,
+      "no_speech_prob": 0.1598321795463562
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 9.0,
+      "end": 14.0,
+      "text": " Okay sounds good. What kind of assignment are you working on?",
+      "tokens": [
+        50814, 1033, 3263, 665, 13, 708, 733, 295, 15187, 366, 291, 1364, 322,
+        30, 51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.36725387573242185,
+      "compression_ratio": 1.3095238095238095,
+      "no_speech_prob": 0.1598321795463562
+    },
+    {
+      "id": 3,
+      "seek": 1400,
+      "start": 14.0,
+      "end": 22.0,
+      "text": " I am going to have two assignments from one front to my computer graphics and other from my architecture.",
+      "tokens": [
+        50364, 286, 669, 516, 281, 362, 732, 22546, 490, 472, 1868, 281, 452,
+        3820, 11837, 293, 661, 490, 452, 9482, 13, 50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6705851699366714,
+      "compression_ratio": 1.238532110091743,
+      "no_speech_prob": 0.34654948115348816
+    },
+    {
+      "id": 4,
+      "seek": 1400,
+      "start": 22.0,
+      "end": 25.0,
+      "text": " That's the only two of those.",
+      "tokens": [50764, 663, 311, 264, 787, 732, 295, 729, 13, 50914],
+      "temperature": 0.0,
+      "avg_logprob": -0.6705851699366714,
+      "compression_ratio": 1.238532110091743,
+      "no_speech_prob": 0.34654948115348816
+    }
+  ],
+  "language": "en"
+}

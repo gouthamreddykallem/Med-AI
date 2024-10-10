@@ -1,0 +1,97 @@
+[
+  {
+    "id": 0,
+    "seek": 0,
+    "start": 0.0,
+    "end": 3.0,
+    "text": " Hi, Kruthi. How are you doing today?",
+    "tokens": [
+      50364, 2421, 11, 6332, 2910, 72, 13, 1012, 366, 291, 884, 965, 30, 50514
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.20757968155379147,
+    "compression_ratio": 1.4672897196261683,
+    "no_speech_prob": 0.36694368720054626
+  },
+  {
+    "id": 1,
+    "seek": 0,
+    "start": 3.0,
+    "end": 6.0,
+    "text": " Hi, Gautam. Today I am doing Tarzan's algorithm.",
+    "tokens": [
+      50514, 2421, 11, 460, 1375, 335, 13, 2692, 286, 669, 884, 10537, 21238,
+      311, 9284, 13, 50664
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.20757968155379147,
+    "compression_ratio": 1.4672897196261683,
+    "no_speech_prob": 0.36694368720054626
+  },
+  {
+    "id": 2,
+    "seek": 0,
+    "start": 6.0,
+    "end": 8.0,
+    "text": " What did you learn?",
+    "tokens": [50664, 708, 630, 291, 1466, 30, 50764],
+    "temperature": 0.0,
+    "avg_logprob": -0.20757968155379147,
+    "compression_ratio": 1.4672897196261683,
+    "no_speech_prob": 0.36694368720054626
+  },
+  {
+    "id": 3,
+    "seek": 0,
+    "start": 8.0,
+    "end": 11.0,
+    "text": " Nothing. Just BFS traversal.",
+    "tokens": [50764, 6693, 13, 1449, 363, 29318, 23149, 304, 13, 50914],
+    "temperature": 0.0,
+    "avg_logprob": -0.20757968155379147,
+    "compression_ratio": 1.4672897196261683,
+    "no_speech_prob": 0.36694368720054626
+  },
+  {
+    "id": 4,
+    "seek": 0,
+    "start": 11.0,
+    "end": 15.0,
+    "text": " Can you describe me what BFS traversal is about?",
+    "tokens": [
+      50914, 1664, 291, 6786, 385, 437, 363, 29318, 23149, 304, 307, 466, 30,
+      51114
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.20757968155379147,
+    "compression_ratio": 1.4672897196261683,
+    "no_speech_prob": 0.36694368720054626
+  },
+  {
+    "id": 5,
+    "seek": 0,
+    "start": 15.0,
+    "end": 23.0,
+    "text": " During the BFS, maintain an index for each node and the smallest index that can reach from the node.",
+    "tokens": [
+      51114, 6842, 264, 363, 29318, 11, 6909, 364, 8186, 337, 1184, 9984, 293,
+      264, 16998, 8186, 300, 393, 2524, 490, 264, 9984, 13, 51514
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.20757968155379147,
+    "compression_ratio": 1.4672897196261683,
+    "no_speech_prob": 0.36694368720054626
+  },
+  {
+    "id": 6,
+    "seek": 0,
+    "start": 23.0,
+    "end": 25.0,
+    "text": " Okay. Sounds good. Thank you.",
+    "tokens": [51514, 1033, 13, 14576, 665, 13, 1044, 291, 13, 51614],
+    "temperature": 0.0,
+    "avg_logprob": -0.20757968155379147,
+    "compression_ratio": 1.4672897196261683,
+    "no_speech_prob": 0.36694368720054626
+  }
+]

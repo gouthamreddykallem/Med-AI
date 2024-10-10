@@ -6,9 +6,12 @@
 frontend/.pnp.js
 frontend/.yarn/install-state.gz
 
+/Transcription/*.idea
+/Transcription/*.venv
+
 # testing
 /frontend/coverage
-
+/Whisper_test
 # next.js
 /frontend/.next/
 /frontend/out/

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "seek": 0,
+    "start": 0.0,
+    "end": 7.0,
+    "text": " Hi Krati, how are you doing today? Hi Gautam, today I am doing Tarzan's algorithm.",
+    "tokens": [
+      50364, 2421, 6332, 6908, 11, 577, 366, 291, 884, 965, 30, 2421, 460, 1375,
+      335, 11, 965, 286, 669, 884, 10537, 21238, 311, 9284, 13, 50714
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.24409534620202106,
+    "compression_ratio": 1.4952830188679245,
+    "no_speech_prob": 0.4976489245891571
+  },
+  {
+    "id": 1,
+    "seek": 0,
+    "start": 7.0,
+    "end": 11.0,
+    "text": " What did you learn? Nothing, just BFS traversal.",
+    "tokens": [
+      50714, 708, 630, 291, 1466, 30, 6693, 11, 445, 363, 29318, 23149, 304, 13,
+      50914
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.24409534620202106,
+    "compression_ratio": 1.4952830188679245,
+    "no_speech_prob": 0.4976489245891571
+  },
+  {
+    "id": 2,
+    "seek": 0,
+    "start": 11.0,
+    "end": 15.0,
+    "text": " Can you describe me what BFS traversal is about?",
+    "tokens": [
+      50914, 1664, 291, 6786, 385, 437, 363, 29318, 23149, 304, 307, 466, 30,
+      51114
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.24409534620202106,
+    "compression_ratio": 1.4952830188679245,
+    "no_speech_prob": 0.4976489245891571
+  },
+  {
+    "id": 3,
+    "seek": 0,
+    "start": 15.0,
+    "end": 23.0,
+    "text": " Okay, during the BFS, maintain an index for each node and the smallest index that can reach from the node.",
+    "tokens": [
+      51114, 1033, 11, 1830, 264, 363, 29318, 11, 6909, 364, 8186, 337, 1184,
+      9984, 293, 264, 16998, 8186, 300, 393, 2524, 490, 264, 9984, 13, 51514
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.24409534620202106,
+    "compression_ratio": 1.4952830188679245,
+    "no_speech_prob": 0.4976489245891571
+  },
+  {
+    "id": 4,
+    "seek": 0,
+    "start": 23.0,
+    "end": 26.0,
+    "text": " Okay, sounds good. Thank you.",
+    "tokens": [51514, 1033, 11, 3263, 665, 13, 1044, 291, 13, 51664],
+    "temperature": 0.0,
+    "avg_logprob": -0.24409534620202106,
+    "compression_ratio": 1.4952830188679245,
+    "no_speech_prob": 0.4976489245891571
+  }
+]

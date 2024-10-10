@@ -1,0 +1,112 @@
+[
+  {
+    "id": 0,
+    "seek": 0,
+    "start": 0.0,
+    "end": 3.0,
+    "text": " Hi Krati, how are you doing Prudah?",
+    "tokens": [
+      50364, 2421, 591, 4481, 72, 11, 577, 366, 291, 884, 2114, 532, 545, 30,
+      50514
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.3498925227744907,
+    "compression_ratio": 1.4813084112149533,
+    "no_speech_prob": 0.3299204409122467
+  },
+  {
+    "id": 1,
+    "seek": 0,
+    "start": 3.0,
+    "end": 6.0,
+    "text": " Hi Gautam, today I am doing Tadil's algorithm.",
+    "tokens": [
+      50514, 2421, 460, 1375, 335, 11, 965, 286, 669, 884, 314, 345, 388, 311,
+      9284, 13, 50664
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.3498925227744907,
+    "compression_ratio": 1.4813084112149533,
+    "no_speech_prob": 0.3299204409122467
+  },
+  {
+    "id": 2,
+    "seek": 0,
+    "start": 6.0,
+    "end": 8.0,
+    "text": " What did you learn?",
+    "tokens": [50664, 708, 630, 291, 1466, 30, 50764],
+    "temperature": 0.0,
+    "avg_logprob": -0.3498925227744907,
+    "compression_ratio": 1.4813084112149533,
+    "no_speech_prob": 0.3299204409122467
+  },
+  {
+    "id": 3,
+    "seek": 0,
+    "start": 8.0,
+    "end": 11.0,
+    "text": " Nothing, just BFS traversal.",
+    "tokens": [50764, 6693, 11, 445, 363, 29318, 23149, 304, 13, 50914],
+    "temperature": 0.0,
+    "avg_logprob": -0.3498925227744907,
+    "compression_ratio": 1.4813084112149533,
+    "no_speech_prob": 0.3299204409122467
+  },
+  {
+    "id": 4,
+    "seek": 0,
+    "start": 11.0,
+    "end": 15.0,
+    "text": " Can you describe me what BFS traversal is about?",
+    "tokens": [
+      50914, 1664, 291, 6786, 385, 437, 363, 29318, 23149, 304, 307, 466, 30,
+      51114
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.3498925227744907,
+    "compression_ratio": 1.4813084112149533,
+    "no_speech_prob": 0.3299204409122467
+  },
+  {
+    "id": 5,
+    "seek": 0,
+    "start": 15.0,
+    "end": 19.0,
+    "text": " Okay, during the BFS, maintain an index for each node",
+    "tokens": [
+      51114, 1033, 11, 1830, 264, 363, 29318, 11, 6909, 364, 8186, 337, 1184,
+      9984, 51314
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.3498925227744907,
+    "compression_ratio": 1.4813084112149533,
+    "no_speech_prob": 0.3299204409122467
+  },
+  {
+    "id": 6,
+    "seek": 0,
+    "start": 19.0,
+    "end": 23.0,
+    "text": " and the smallest index that can reach from the node.",
+    "tokens": [
+      51314, 293, 264, 16998, 8186, 300, 393, 2524, 490, 264, 9984, 13, 51514
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.3498925227744907,
+    "compression_ratio": 1.4813084112149533,
+    "no_speech_prob": 0.3299204409122467
+  },
+  {
+    "id": 7,
+    "seek": 0,
+    "start": 23.0,
+    "end": 25.0,
+    "text": " Okay, sounds good. Thank you.",
+    "tokens": [51514, 1033, 11, 3263, 665, 13, 1044, 291, 13, 51614],
+    "temperature": 0.0,
+    "avg_logprob": -0.3498925227744907,
+    "compression_ratio": 1.4813084112149533,
+    "no_speech_prob": 0.3299204409122467
+  }
+]
